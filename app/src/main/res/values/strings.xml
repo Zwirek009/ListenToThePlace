@@ -3,4 +3,5 @@
     <string name="title_add_music">Add music</string>
     <string name="title_music_list">Explore music</string>
     <string name="audio_track">Audio track</string>
+    <string name="distance">X.XX km</string>
 </resources>
