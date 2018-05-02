@@ -37,5 +37,59 @@ namespace TodoApi.Controllers
             }
             return Ok(item);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] AudioTrackItem item)
+        {
+            if (item == null)
+            {
+                return BadRequest();
+            }
+
+            _context.AudioTracks.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetAudioTrack", new { id = item.Id }, item);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] AudioTrackItem item)
+        {
+            if (item == null || item.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var audioTrack = _context.AudioTracks.Find(id);
+            if (audioTrack == null)
+            {
+                return NotFound();
+            }
+
+            audioTrack.Name = item.Name;
+            audioTrack.Performer = item.Performer;
+            audioTrack.Latitude = item.Latitude;
+            audioTrack.Longtitude = item.Longtitude;
+
+            _context.AudioTracks.Update(audioTrack);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var audioTrack = _context.AudioTracks.Find(id);
+            if (audioTrack == null)
+            {
+                return NotFound();
+            }
+
+            _context.AudioTracks.Remove(audioTrack);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
