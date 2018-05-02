@@ -16,9 +16,26 @@ namespace TodoApi.Controllers
 
             if (_context.AudioTracks.Count() == 0)
             {
-                _context.AudioTracks.Add(new AudioTrackItem { Name = "Imagine", Performer = "John Lennon", Latitude = 52.2390750, Longtitude = 20.9858590 });
+                _context.AudioTracks.Add(new AudioTrackItem { Name = "Imagine", Performer = "John Lennon", Latitude = 52.2201353, Longtitude = 21.0118582 });
                 _context.SaveChanges();
             }
+        }
+
+        [HttpGet]
+        public List<AudioTrackItem> GetAll()
+        {
+            return _context.AudioTracks.ToList();
+        }
+
+        [HttpGet("{id}", Name = "GetAudioTrack")]
+        public IActionResult GetById(long id)
+        {
+            var item = _context.AudioTracks.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return Ok(item);
         }
     }
 }
