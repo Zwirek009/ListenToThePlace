@@ -5,15 +5,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import pl.wiraszka.listentotheplace.R
 import pl.wiraszka.listentotheplace.holders.MusicListHolder
+import pl.wiraszka.listentotheplace.models.AudioTrack
 
 class MusicListRecyclerAdapter() : RecyclerView.Adapter<MusicListHolder>() {
 
+    val currentResults: ArrayList<AudioTrack> = ArrayList<AudioTrack>()
+
     override fun getItemCount(): Int {
-        return 15 // temporary
+        return currentResults.size
     }
 
     override fun onBindViewHolder(holder: MusicListHolder, position: Int) {
-        // here we will update our view
+        var audioTrack = currentResults[position]
+
+        holder?.updateWithAudioTrack(audioTrack)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicListHolder {

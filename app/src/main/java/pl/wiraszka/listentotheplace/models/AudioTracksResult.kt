@@ -1,5 +1,5 @@
 package pl.wiraszka.listentotheplace.models
 
-class AudioTrackQueryData {
+class AudioTracksResult {
     val audioTracks:ArrayList<AudioTrack> = ArrayList<AudioTrack>()
 }
