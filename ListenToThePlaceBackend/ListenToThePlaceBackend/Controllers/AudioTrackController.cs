@@ -22,9 +22,11 @@ namespace TodoApi.Controllers
         }
 
         [HttpGet]
-        public List<AudioTrackItem> GetAll()
+        public IActionResult GetAll()
         {
-            return _context.AudioTracks.ToList();
+            var audioTracks = new AudioTracksObject();
+            audioTracks.AudioTracks = _context.AudioTracks.ToList();
+            return Ok(audioTracks);
         }
 
         [HttpGet("{id}", Name = "GetAudioTrack")]
