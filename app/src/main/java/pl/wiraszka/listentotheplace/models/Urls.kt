@@ -1,7 +1,7 @@
 package pl.wiraszka.listentotheplace.models
 
 object Urls {
-    val ListenToThePlaceUrl = "192.168.0.1:48100/api"
+    val ListenToThePlaceUrl = "http://192.168.56.1:48100/api/audiotrack"
 
     fun getAllAudioTracksUrl() : String{
         return ListenToThePlaceUrl + "/audiotrack"
