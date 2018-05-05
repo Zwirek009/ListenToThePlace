@@ -9,4 +9,5 @@
     <string name="add_longtitude_title">Longtitude</string>
     <string name="add_latitude_title">Latitude</string>
     <string name="add_performer_title">Performer</string>
+    <string name="add_audio_track">Add music</string>
 </resources>
