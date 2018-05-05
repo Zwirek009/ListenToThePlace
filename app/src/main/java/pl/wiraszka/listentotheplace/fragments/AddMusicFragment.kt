@@ -2,11 +2,13 @@ package pl.wiraszka.listentotheplace.fragments
 
 
 import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import kotlinx.android.synthetic.main.fragment_add_music.*
 
@@ -42,6 +44,11 @@ class AddMusicFragment : Fragment() {
             audioTrack.longtitude = add_longtitude_input.text.toString().toDouble()
 
             musicListProvider.postNewAudioTrack(audioTrack)
+
+            val builder = AlertDialog.Builder(activity)
+            builder.setMessage("New track added :)").setTitle("Done")
+            val dialog = builder.create()
+            dialog.show()
         }
         catch(ex: Exception){
             // show alert to the user
