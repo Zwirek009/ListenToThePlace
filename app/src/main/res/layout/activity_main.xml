@@ -12,8 +12,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/navigation">
-
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/add_latitude_title_temp"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/add_latitude_title"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/add_latitude_input_temp"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:hint="XX.XXXXXX"
+        android:inputType="text"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toEndOf="@+id/add_latitude_title_temp" />
+
+    <TextView
+        android:id="@+id/add_longtitude_title_temp"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/add_longtitude_title"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toEndOf="@+id/add_latitude_input_temp" />
+
+    <EditText
+        android:id="@+id/add_longtitude_input_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="XX.XXXXXX"
+        android:inputType="text"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/add_longtitude_title_temp" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
