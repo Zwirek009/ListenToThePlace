@@ -23,7 +23,6 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.OnSuccessListener
 import kotlinx.android.synthetic.main.activity_main.*
-import pl.wiraszka.listentotheplace.R.id.add_longtitude_input
 import pl.wiraszka.listentotheplace.R.styleable.View
 import pl.wiraszka.listentotheplace.fragments.AddMusicFragment
 import pl.wiraszka.listentotheplace.fragments.MusicListFragment

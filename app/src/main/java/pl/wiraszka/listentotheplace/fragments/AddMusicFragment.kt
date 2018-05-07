@@ -44,15 +44,13 @@ class AddMusicFragment : Fragment() {
 
             audioTrack.name = add_title_input.text.toString()
             audioTrack.performer = add_performer_input.text.toString()
-            audioTrack.latitude = add_latitude_input.text.toString().toDouble()
-            audioTrack.longtitude = add_longtitude_input.text.toString().toDouble()
+            audioTrack.latitude = activity?.findViewById<EditText>(R.id.add_latitude_input_temp)?.text.toString().toDouble()
+            audioTrack.longtitude = activity?.findViewById<EditText>(R.id.add_longtitude_input_temp)?.text.toString().toDouble()
 
             musicListProvider.postNewAudioTrack(audioTrack)
 
             add_title_input.text.clear()
             add_performer_input.text.clear()
-            add_latitude_input.text.clear()
-            add_longtitude_input.text.clear()
 
             Snackbar.make(view!!, "Audio track added :)", Snackbar.LENGTH_LONG).show()
         }
