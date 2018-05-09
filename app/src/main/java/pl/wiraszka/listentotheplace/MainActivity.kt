@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.common.ConnectionResult
@@ -83,6 +84,11 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, G
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, musicListFragment)
         transaction.commit()
+
+        map_link.setOnClickListener {
+            val intent = MapsActivity.newIntent(this)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {

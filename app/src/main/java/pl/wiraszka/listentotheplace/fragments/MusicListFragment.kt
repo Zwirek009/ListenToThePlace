@@ -11,6 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_music_list.*
+import kotlinx.android.synthetic.main.music_list_item.*
+import pl.wiraszka.listentotheplace.MapsActivity
 
 import pl.wiraszka.listentotheplace.R
 import pl.wiraszka.listentotheplace.adapters.MusicListRecyclerAdapter

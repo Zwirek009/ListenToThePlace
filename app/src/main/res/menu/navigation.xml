@@ -10,5 +10,4 @@
         android:id="@+id/navigation_add_music"
         android:icon="@drawable/ic_add_black_24dp"
         android:title="@string/title_add_music" />
-
 </menu>
